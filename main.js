@@ -24,7 +24,7 @@ const displayUsers = () => {
     let btn = document.createElement("button")
     btn.innerText = "Show more info"
     btn.addEventListener('click', function(){
-      showMoreInfo(user, fetchList)
+      showMoreInfo(user, li)
     })
 
     //Append list in DOM
@@ -34,13 +34,9 @@ const displayUsers = () => {
   })
 }
 
-const showMoreInfo = (user, fetchList) => {
-  let ul = document.createElement('ul')
-  let li = document.createElement('li')
-
-  li.innerText = `  Age: ${user.dob.age} 
+const showMoreInfo = (user, li) => {
+  li.innerText += `  
+  Age: ${user.dob.age} 
   Gender: ${user.gender}
   Email: ${user.email}`
-  ul.appendChild(li)
-  console.log(ul)
 }
